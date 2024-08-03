@@ -1,0 +1,2 @@
+(function(){self.onmessage=e=>{console.log("Worker received message:",e.data);const o=Math.floor(4001*Math.random())+1e3;setTimeout((()=>{self.postMessage({done:!0})}),o)}})();
+//# sourceMappingURL=749.0dbb2df8.js.map
