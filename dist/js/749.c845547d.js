@@ -1,0 +1,2 @@
+(function(){self.onmessage=e=>{console.log("LoadingWorker received message:",e.data);let o=Math.floor(7001*Math.random())+3e3;setTimeout((()=>{self.postMessage({done:!0})}),o)}})();
+//# sourceMappingURL=749.c845547d.js.map

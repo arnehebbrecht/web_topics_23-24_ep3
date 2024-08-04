@@ -2,7 +2,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
 import MapView from '@/views/Map.vue';
-// import Contact from '@/views/Contact.vue'; // Uncomment if needed
+import BlogPage from '@/views/BlogPage.vue'; 
+
 
 const routes = [
   {
@@ -11,16 +12,15 @@ const routes = [
     component: Home
   },
   {
-    path: '/Map', // Lowercase path
-    name: 'Map', // Ensure this matches your route names
+    path: '/Map',
+    name: 'Map', 
     component: MapView
+  },
+  {
+    path: '/Blog',
+    name: 'Blog',
+    component: BlogPage
   }
-  // Uncomment if needed
-  // {
-  //   path: '/contact',
-  //   name: 'Contact',
-  //   component: Contact
-  // }
 ];
 
 const router = createRouter({

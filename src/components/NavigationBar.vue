@@ -32,7 +32,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 .navbar {
   position: fixed; /* Fix the navbar to the top of the page */
@@ -41,7 +40,7 @@ export default {
   background-color: #333; /* Example background color */
   color: white;
   padding: 1rem;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 9999; /* Ensure it's above other content */
   left: 0;
 }
 
@@ -63,5 +62,6 @@ export default {
 
 .nav-item a:hover {
   text-decoration: underline; /* Add underline on hover */
+  color: lightgray; /* Change color on hover */
 }
 </style>

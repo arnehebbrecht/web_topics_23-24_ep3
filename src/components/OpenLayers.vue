@@ -70,7 +70,7 @@ export default {
             this.trackEvent('Map Interaction', 'Error', data.error);
             return;
           }
-          this.processCities(data);
+          this.processCities(data); // places data
         };
 
         this.worker.postMessage({

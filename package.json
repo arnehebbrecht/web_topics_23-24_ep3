@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@gtm-support/vue-gtm": "^3.0.1",
+    "axios": "^1.7.3",
     "core-js": "^3.8.3",
     "geojson-places": "^1.0.8",
     "gsap": "^3.12.5",
