@@ -1,43 +1,15 @@
 self.onmessage = async function(event) {
-  const { username } = event.data;
-  const maxRows = 50;
-  let startRow = 0;
   let cityData = [];
+  cityData =event.data;
+  cityData = [];
 
   try {
-    while (startRow < 201) {
-      const url = `http://api.geonames.org/citiesJSON?formatted=true&lang=en&username=${username}&style=full&north=90&south=-90&east=180&west=-180&fcode=PPLC&maxRows=${maxRows}&startRow=${startRow}`;
-      
-      // Fetch the data from the API
-      const response = await fetch(url);
-      const data = await response.json();
-      
-      // Check if status exists and log the message
-      if (data.status) {
-        // Check if the rate limit message is returned
-        if (data.status.message === "the hourly limit of 1000 credits for hebbrechtarne has been exceeded. Please throttle your requests or use the commercial service.") {
           cityData = backup(); // Get backup data
           console.log(cityData); // Debugging line
           self.postMessage(cityData); // Send backup data to main thread
            // Sort the cityData alphabetically by name
           cityData.sort((a, b) => a.name.localeCompare(b.name));
           return; // Exit the async function
-        }
-      }
-      else {
-        // If data.geonames exists and is an array, concatenate with cityData
-        if (Array.isArray(data.geonames)) {
-          cityData = cityData.concat(data.geonames);
-          startRow += maxRows; // Move to the next batch
-        } else {
-          throw new Error('Unexpected data structure');
-        }
-      }
-    }
-
-    self.postMessage(cityData); // Send final data to main thread
-
-
   } catch (error) {
     self.postMessage({ error: error.message });
   }
