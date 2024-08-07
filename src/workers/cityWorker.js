@@ -1,4 +1,6 @@
-//hard coded data
+//hard coded data in the beginning i was getting it from a http database geonames(but the api has a pull limit and
+//i was getting blocked so i had to hard code it) 
+
 self.onmessage = async function(event) {
   let cityData = [];
   cityData = event.data;
@@ -15,10 +17,18 @@ self.onmessage = async function(event) {
       }
     });
 
-    // Sort the cityData alphabetically by name
-    cityData.sort((a, b) => a.name.localeCompare(b.name));
-    console.log(cityData); // Debugging line
-    self.postMessage(cityData); // Send backup data to main thread
+    // Sort the array by city name
+cityData.sort((a, b) => a.name.localeCompare(b.name));
+
+// Remove duplicates
+const uniqueCityData = cityData.filter((item, index, self) =>
+  index === self.findIndex((t) => (
+    t.name === item.name
+  ))
+);
+
+console.log(uniqueCityData);
+    self.postMessage(uniqueCityData); // Send backup data to main thread
   } catch (error) {
     self.postMessage({ error: error.message });
   }

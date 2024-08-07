@@ -18,7 +18,7 @@
             :href="formatWikipediaUrl(city.wikipedia)"
             target="_blank"
             rel="noopener noreferrer"
-            @click="trackSidebarLinkClick(city.name, city.wikipedia)"
+            @click="trackSidebarLinkClick(city.wikipedia)"
           >
             {{ city.name }}
           </a>
@@ -34,7 +34,12 @@
     >
       <h3>{{ selectedCity.name }}</h3>
       <p>
-        <a :href="selectedCity.wikipedia" target="_blank" rel="noopener noreferrer">
+        <a
+          :href="selectedCity.wikipedia"
+          target="_blank"
+          rel="noopener noreferrer"
+          @click="trackSidebarLinkClick(selectedCity.wikipedia)"
+        >
           Wikipedia Link
         </a>
       </p>
@@ -58,7 +63,7 @@ import VectorSource from "ol/source/Vector";
 import { Style, Icon } from "ol/style";
 import Feature from "ol/Feature";
 import { Point } from "ol/geom";
-import { fromLonLat } from "ol/proj";
+import { fromLonLat, toLonLat } from "ol/proj";
 import Select from "ol/interaction/Select";
 import { click } from "ol/events/condition";
 
@@ -79,6 +84,10 @@ export default {
       isSidebarVisible: true,
       cities: [],
       loading: true,
+      isMapIdle: true,
+      mapIdleTimeout: null,
+      zoomChangeTimeout: null,
+      isZooming: false,
     };
   },
   mounted() {
@@ -99,27 +108,20 @@ export default {
     },
 
     trackEvent(category, action, label = "") {
-      // Send event to Google Tag Manager
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: "customEvent",
-          eventCategory: category,
-          eventAction: action,
-          eventLabel: label,
-        });
-      }
-
-      // Send event to Google Analytics
       if (this.$gtag) {
         this.$gtag.event(action, {
           event_category: category,
           event_label: label,
         });
+      } else {
+        console.warn("Google Analytics not available. Event not tracked.");
       }
     },
-    trackSidebarLinkClick(cityName) {
-      this.trackEvent("Sidebar Interaction", "Click Link", cityName);
+
+    trackSidebarLinkClick(wikipediaUrl) {
+      this.trackEvent("Sidebar Interaction", "Click Link", `${wikipediaUrl}`);
     },
+
     initializeWorker() {
       if (window.Worker) {
         this.worker = new Worker(workerUrl, { type: "module" });
@@ -129,16 +131,14 @@ export default {
           if (data.error) {
             this.error = data.error;
             console.error(data.error);
-            this.trackEvent("Map Interaction", "Error", data.error);
+            this.trackEvent("Worker Interaction", "Error", data.error);
             return;
           }
           this.processCities(data);
           this.loading = false;
         };
 
-        this.worker.postMessage({
-          username: "hebbrechtarne",
-        });
+        this.worker.postMessage({ username: "hebbrechtarne" });
       } else {
         console.error("Web Workers are not supported in this browser.");
       }
@@ -161,9 +161,7 @@ export default {
         });
       });
 
-      const citySource = new VectorSource({
-        features: features,
-      });
+      const citySource = new VectorSource({ features: features });
 
       if (this.cityLayer) {
         this.map.removeLayer(this.cityLayer);
@@ -213,47 +211,65 @@ export default {
           this.selectedCity = null;
         }
       });
-
-      this.trackEvent("Map Interaction", "Process Cities", "", cities.length);
     },
 
     initializeMap() {
-      // Initialize the map
       this.map = new Map({
         target: this.$refs.mapContainer,
-        layers: [
-          new TileLayer({
-            source: new OSM(),
-          }),
-        ],
+        layers: [new TileLayer({ source: new OSM() })],
         view: new View({
           center: fromLonLat([4.5, 50.5]),
           zoom: 7,
         }),
       });
 
-      // Track map initialization
-      this.trackEvent("Map Interaction", "Initialize Map");
-
-      // Get the map view
       const view = this.map.getView();
 
-      // Track map movements (center changes)
-      view.on("change:center", () => {
-        const center = view.getCenter();
-        const [longitude, latitude] = fromLonLat(center);
+      view.on("change:center", this.debounceOrThrottleMapMove);
+      view.on("change:resolution", this.debounceOrThrottleZoomChange);
+    },
+
+    debounceOrThrottleMapMove() {
+      if (this.isZooming) return;
+
+      if (this.mapIdleTimeout) {
+        clearTimeout(this.mapIdleTimeout);
+      }
+      this.mapIdleTimeout = setTimeout(() => {
+        this.isMapIdle = true;
+        this.handleMapMove();
+      }, 300);
+    },
+
+    debounceOrThrottleZoomChange() {
+      if (this.zoomChangeTimeout) {
+        clearTimeout(this.zoomChangeTimeout);
+      }
+      this.zoomChangeTimeout = setTimeout(() => {
+        this.handleZoomChange();
+      }, 300);
+    },
+
+    handleMapMove() {
+      if (this.isMapIdle) {
+        const center = this.map.getView().getCenter();
+        const [longitude, latitude] = toLonLat(center);
         this.trackEvent(
           "Map Interaction",
           "Map Moved",
           `Longitude: ${longitude.toFixed(6)}, Latitude: ${latitude.toFixed(6)}`
         );
-      });
+        this.isMapIdle = false;
+      }
+    },
 
-      // Track zoom changes (resolution changes)
-      view.on("change:resolution", () => {
-        const zoom = view.getZoom();
+    handleZoomChange() {
+      if (!this.isZooming) {
+        this.isZooming = true;
+        const zoom = this.map.getView().getZoom();
         this.trackEvent("Map Interaction", "Zoom Changed", `Zoom Level: ${zoom}`);
-      });
+        this.isZooming = false;
+      }
     },
 
     updateInfoBoxPosition(pixel) {
@@ -263,11 +279,14 @@ export default {
         top: pixel[1] + mapRect.top,
         left: pixel[0] + mapRect.left + 10,
       };
+
+      if (this.selectedCity) {
+        this.trackEvent("Info Box", "Display", this.selectedCity.name);
+      }
     },
 
     toggleSidebar() {
       this.isSidebarVisible = !this.isSidebarVisible;
-      this.trackEvent("Sidebar", "Toggle", this.isSidebarVisible ? "Open" : "Close");
     },
   },
 };

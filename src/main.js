@@ -11,7 +11,7 @@ const app = createApp(App);
 
 // Configure and use Google Tag Manager
 app.use(VueGtm, {
-  id: 'GTM-N2DKR7J6', // Replace with your Google Tag Manager ID
+  id: 'GTM-M85V9HMH', // Replace with your Google Tag Manager ID
   vueRouter: router
 });
 
