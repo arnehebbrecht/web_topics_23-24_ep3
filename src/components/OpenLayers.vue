@@ -98,7 +98,7 @@ export default {
       return url;
     },
 
-    trackEvent(category, action, label = "", value = 0) {
+    trackEvent(category, action, label = "") {
       // Send event to Google Tag Manager
       if (window.dataLayer) {
         window.dataLayer.push({
@@ -106,7 +106,6 @@ export default {
           eventCategory: category,
           eventAction: action,
           eventLabel: label,
-          eventValue: value,
         });
       }
 
@@ -115,12 +114,11 @@ export default {
         this.$gtag.event(action, {
           event_category: category,
           event_label: label,
-          value: value,
         });
       }
     },
     trackSidebarLinkClick(cityName) {
-      this.trackEvent("Sidebar Interaction", "Click Link", cityName, 0);
+      this.trackEvent("Sidebar Interaction", "Click Link", cityName);
     },
     initializeWorker() {
       if (window.Worker) {
