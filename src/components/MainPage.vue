@@ -27,29 +27,31 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 export default {
-  name: 'LoadingAnimation',
+  name: "LoadingAnimation",
   mounted() {
     const urbanText = this.$refs.urbanText;
-    const urbanLetters = urbanText.querySelectorAll('.urban-letter');
+    const urbanLetters = urbanText.querySelectorAll(".urban-letter");
     const chroniclesText = this.$refs.chroniclesText;
-    const chroniclesLetters = chroniclesText.querySelectorAll('.chronicles-letter');
+    const chroniclesLetters = chroniclesText.querySelectorAll(".chronicles-letter");
     const backgroundImage = this.$refs.backgroundImage;
 
     const tl = gsap.timeline();
 
     // Animate urban text letters one by one
-    tl.fromTo(urbanLetters, 
-      { opacity: 0, y: 20, color: 'white' }, 
-      { opacity: 1, y: 0, color: 'white', stagger: 0.1, duration: 1 }
+    tl.fromTo(
+      urbanLetters,
+      { opacity: 0, y: 20, color: "white" },
+      { opacity: 1, y: 0, color: "white", stagger: 0.1, duration: 1 }
     );
 
     // Animate chronicles text letters one by one
-    tl.fromTo(chroniclesLetters, 
-      { opacity: 0, y: 20, color: 'white' }, 
-      { opacity: 1, y: 0, color: 'white', stagger: 0.1, duration: 1 },
+    tl.fromTo(
+      chroniclesLetters,
+      { opacity: 0, y: 20, color: "white" },
+      { opacity: 1, y: 0, color: "white", stagger: 0.1, duration: 1 },
       "-=0.5" // Start this animation halfway through the previous one
     );
 
@@ -57,25 +59,33 @@ export default {
     tl.to(backgroundImage, {
       opacity: 1,
       duration: 3,
-      ease: 'power1.inOut',
+      ease: "power1.inOut",
     });
 
     // Fade text to black after a delay
-    tl.to(urbanLetters, {
-      textShadow: '1px 1px 20px black', // Black outline effect
-      color: "#00ff00",
-      duration: 1,
-      delay: 1.5, // Delay before starting the color change
-      stagger: 0.1 // Maintain stagger effect for smooth transition
-    }, "-=2.5"); // Adjust to overlap with the end of the background image fade
+    tl.to(
+      urbanLetters,
+      {
+        textShadow: "1px 1px 20px black", // Black outline effect
+        color: "#00ff00",
+        duration: 1,
+        delay: 1.5, // Delay before starting the color change
+        stagger: 0.1, // Maintain stagger effect for smooth transition
+      },
+      "-=2.5"
+    ); // Adjust to overlap with the end of the background image fade
 
-    tl.to(chroniclesLetters, {
-      textShadow: '1px 1px 20px black', // Black outline effect
-      color: "#ff00ff",
-      duration: 1,
-      delay: 1.5, // Delay before starting the color change
-      stagger: 0.1 // Maintain stagger effect for smooth transition
-    }, "-=2.5"); // Adjust to overlap with the end of the background image fade
+    tl.to(
+      chroniclesLetters,
+      {
+        textShadow: "1px 1px 20px black", // Black outline effect
+        color: "#ff00ff",
+        duration: 1,
+        delay: 1.5, // Delay before starting the color change
+        stagger: 0.1, // Maintain stagger effect for smooth transition
+      },
+      "-=2.5"
+    ); // Adjust to overlap with the end of the background image fade
   },
 };
 </script>
@@ -133,7 +143,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('@/assets/gent.jpg');
+  background-image: url("@/assets/gent.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0;

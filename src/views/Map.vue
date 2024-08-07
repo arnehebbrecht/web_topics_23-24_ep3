@@ -7,16 +7,14 @@
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue';
-import OpenLayers from '@/components/OpenLayers.vue';
-
+import NavigationBar from "@/components/NavigationBar.vue";
+import OpenLayers from "@/components/OpenLayers.vue";
 
 export default {
-  name: 'MapView', // Updated name to reflect the component’s purpose
+  name: "MapView", // Updated name to reflect the component’s purpose
   components: {
     NavigationBar,
-    OpenLayers
-  }
-}
+    OpenLayers,
+  },
+};
 </script>
-
