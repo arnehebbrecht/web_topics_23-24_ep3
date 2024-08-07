@@ -1,0 +1,5 @@
+https://tagmanager.google.com/#/container/accounts/6244789982/containers/192697782/workspaces/8
+
+https://analytics.google.com/analytics/web/?hl=nl&pli=1#/p452723721/realtime/overview?params=_u..nav%3Dmaui%26_u..comparisons%3D%5B%7B%22savedComparisonId%22:%228531815825%22,%22name%22:%22Alle%20gebruikers%22,%22isEnabled%22:true,%22filters%22:%5B%5D,%22systemDefinedSavedComparisonType%22:8,%22isSystemDefined%22:true%7D%5D%26_u..built_comparisons_enabled%3Dtrue&collectionId=business-objectives
+
+https://urbanchronicles.yarnolapin.ikdoeict.be/
