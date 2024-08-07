@@ -1,15 +1,23 @@
 self.onmessage = async function(event) {
   let cityData = [];
-  cityData =event.data;
+  cityData = event.data;
   cityData = [];
 
   try {
-          cityData = backup(); // Get backup data
-          console.log(cityData); // Debugging line
-          self.postMessage(cityData); // Send backup data to main thread
-           // Sort the cityData alphabetically by name
-          cityData.sort((a, b) => a.name.localeCompare(b.name));
-          return; // Exit the async function
+    cityData = backup(); // Get backup data
+    console.log(cityData); // Debugging line
+
+    // Ensure all Wikipedia links have 'https://' prefix
+    cityData.forEach(city => {
+      if (city.wikipedia && !city.wikipedia.startsWith('https://')) {
+        city.wikipedia = 'https://' + city.wikipedia;
+      }
+    });
+
+    // Sort the cityData alphabetically by name
+    cityData.sort((a, b) => a.name.localeCompare(b.name));
+    console.log(cityData); // Debugging line
+    self.postMessage(cityData); // Send backup data to main thread
   } catch (error) {
     self.postMessage({ error: error.message });
   }
