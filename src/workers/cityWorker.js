@@ -1,3 +1,4 @@
+//hard coded data
 self.onmessage = async function(event) {
   let cityData = [];
   cityData = event.data;
