@@ -6,11 +6,10 @@
 
   <!-- Blogpost 1 -->
   <item>
-    <title>Blogpost 1</title>
+    <title>OpenAi</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel</guid>
   </item>
 
   <!-- Blogpost 2 -->
@@ -19,7 +18,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
   </item>
 
   <!-- Blogpost 3 -->
@@ -28,7 +26,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel234</guid>
   </item>
 
   <!-- Blogpost 4 -->
@@ -37,7 +34,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titela</guid>
   </item>
 
   <!-- Blogpost 5 -->
@@ -46,7 +42,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel23v</guid>
   </item>
 
   <!-- Blogpost 6 -->
@@ -55,7 +50,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel23h</guid>
   </item>
 
   <!-- Blogpost 7 -->
@@ -64,7 +58,6 @@
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titelkzz</guid>
   </item>
 </channel>
 </rss>

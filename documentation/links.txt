@@ -5,3 +5,5 @@ https://analytics.google.com/analytics/web/?hl=nl&pli=1#/p452723721/realtime/ove
 https://urbanchronicles.yarnolapin.ikdoeict.be/
 
 https://plesk.ikdoeict.be
+
+install RSS Feed Reader extension into chrome

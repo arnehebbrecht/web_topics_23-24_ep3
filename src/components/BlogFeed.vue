@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <!-- Loading Animation -->
+  <LoadingAnimation v-if="loading" />
+
+  <!-- Main Content -->
+  <div class="container" v-if="!loading">
     <h1 class="title">Blog Feed</h1>
     <div class="content-wrapper">
       <div class="RSS-Feed">
@@ -29,12 +33,18 @@
 </template>
 
 <script>
+import LoadingAnimation from "./LoadingAnimation.vue";
+
 export default {
+  components: {
+    LoadingAnimation,
+  },
   data() {
     return {
       feedItems: [],
       notificationVisible: false,
       feedUrl: "", // To store the RSS feed URL
+      loading: true, // Track loading state
     };
   },
   async mounted() {
@@ -64,6 +74,8 @@ export default {
       }));
     } catch (error) {
       console.error("Error fetching or parsing RSS feed:", error);
+    } finally {
+      this.loading = false; // Hide loading animation after data is fetched
     }
   },
   methods: {
@@ -160,6 +172,7 @@ export default {
 .feed-link {
   color: #2196f3;
 }
+
 /* Sidebar style */
 .sidebar {
   flex: 1; /* Takes up 1/4 of the space */
@@ -220,5 +233,37 @@ export default {
   max-width: 500px; /* Set a max-width for better readability */
   text-align: center;
   color: #fff; /* White text for contrast */
+}
+
+/* Loading animation styles */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of all other content */
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 8px solid #1a73e8;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
