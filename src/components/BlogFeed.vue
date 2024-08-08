@@ -157,6 +157,9 @@ export default {
   color: #bbb; /* Light grey text color for descriptions */
 }
 
+.feed-link {
+  color: #2196f3;
+}
 /* Sidebar style */
 .sidebar {
   flex: 1; /* Takes up 1/4 of the space */
