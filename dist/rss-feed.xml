@@ -1,77 +1,70 @@
 <rss version="2.0">
 <channel>
-  <title>WHat have i learned ?</title>
+  <title>What have I learned?</title>
   <description>A brief description of my blog</description>
+  <link>https://mijnwebsite.nl</link> <!-- Required channel link -->
+
   <!-- Blogpost 1 -->
   <item>
     <title>Blogpost 1</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titel</guid>
   </item>
+
+  <!-- Blogpost 2 -->
   <item>
     <title>Blogpost 2</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
   </item>
 
+  <!-- Blogpost 3 -->
   <item>
     <title>Blogpost 3</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titel234</guid>
   </item>
+
+  <!-- Blogpost 4 -->
   <item>
     <title>Blogpost 4</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titela</guid>
   </item>
-  <!-- Blogpost 2 -->
+
+  <!-- Blogpost 5 -->
   <item>
     <title>Blogpost 5</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titel23v</guid>
   </item>
-  <!-- Voeg hier meer items toe -->
-  <!-- Blogpost 2 -->
+
+  <!-- Blogpost 6 -->
   <item>
     <title>Blogpost 6</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
     <guid>https://mijnwebsite.nl/blogpost-titel23h</guid>
   </item>
+
+  <!-- Blogpost 7 -->
   <item>
     <title>Blogpost 7</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
+    <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titelk</guid>
-  </item>
-  <!-- Blogpost 2 -->
-  <item>
-    <title>Blogpost 8</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
-    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
-  </item>
-  <!-- Voeg hier meer items toe -->
-  <!-- Blogpost 2 -->
-  <item>
-    <title>Blogpost 9</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>Een korte samenvatting van de blogpost.</description>
-    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
-    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+    <guid>https://mijnwebsite.nl/blogpost-titelkzz</guid>
   </item>
 </channel>
 </rss>
