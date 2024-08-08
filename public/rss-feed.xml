@@ -1,0 +1,81 @@
+<rss version="2.0">
+<channel>
+  <title>My Blog Title</title>
+  <link>https://mijnwebsite.nl/</link>
+  <description>A brief description of my blog</description>
+  <!-- Optional: Atom self-link -->
+  <!-- Blogpost 1 -->
+  <item>
+    <title>Blogpost 1</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel</guid>
+  </item>
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+  <!-- Voeg hier meer items toe -->
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+  <item>
+    <title>Blogpost 1</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel</guid>
+  </item>
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+  <!-- Voeg hier meer items toe -->
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+  <item>
+    <title>Blogpost 1</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel</guid>
+  </item>
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+  <!-- Voeg hier meer items toe -->
+  <!-- Blogpost 2 -->
+  <item>
+    <title>Blogpost 2</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>Een korte samenvatting van de blogpost.</description>
+    <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+    <guid>https://mijnwebsite.nl/blogpost-titel23</guid>
+  </item>
+</channel>
+</rss>

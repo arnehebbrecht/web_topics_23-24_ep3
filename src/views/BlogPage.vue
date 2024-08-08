@@ -1,23 +1,22 @@
 <template>
   <div id="app">
     <NavigationBar />
-    <BlogComponent /> 
+    <RssFeedLink />
+    <BlogFeed />
   </div>
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue';
-import BlogComponent from '@/components/BlogComponent.vue';
+import NavigationBar from "@/components/NavigationBar.vue";
+import RssFeedLink from "@/components/RssFeedLink.vue";
+import BlogFeed from "@/components/BlogFeed.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    BlogComponent,
-    NavigationBar
-  }
-}
+    RssFeedLink,
+    NavigationBar,
+    BlogFeed,
+  },
+};
 </script>
-
-
-
-

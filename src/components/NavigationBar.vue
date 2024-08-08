@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 export default {
-  name: 'NavigationBar',
+  name: "NavigationBar",
   setup() {
     const router = useRouter();
 
@@ -27,9 +27,9 @@ export default {
     };
 
     return {
-      navigateTo
+      navigateTo,
     };
-  }
+  },
 };
 </script>
 <style scoped>
