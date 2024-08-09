@@ -7,24 +7,33 @@
   <!-- Blogpost 1 -->
   <item>
     <title>OpenAi</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <link>https://chatgpt.com/</link>
+    <description>
+      ChatGPT was used for much of this project. So many of these topics I have never really had to apply. This made it quite a difficult learning curve. 
+      This made it cost me a lot of time. But i think i made the best of it with my limited experience in web design.
+    </description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
 
   <!-- Blogpost 2 -->
   <item>
-    <title>Blogpost 2</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <title>GSAP</title>
+    <link>https://gsap.com/</link>
+    <description>
+      GSAP (GreenSock Animation Platform) was fun to tinker a bit with. It is a powerful tool that I will definitely use again. It's also pretty easy to use. Once you 
+      understand the basics, you can create some pretty cool animations.
+    </description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 
   <!-- Blogpost 3 -->
   <item>
-    <title>Blogpost 3</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <title>Web Workers</title>
+    <link>https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers</link>
+    <description>
+      This article provides a comprehensive introduction to Web Workers, 
+      a feature that allows web applications to run scripts in background threads. It covers how Web Workers can enhance performance by offloading tasks from the main thread, how to create and manage Web Workers, and key use cases and best practices for their implementation.
+    </description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 

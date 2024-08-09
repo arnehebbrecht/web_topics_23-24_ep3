@@ -1,6 +1,7 @@
 <template>
   <div>
-    <!-- Optional: Add a visible element or button -->
+    <!-- Optional: Add a visible element or button if needed -->
+    <!-- You might add an informative message or status indicator here if relevant -->
   </div>
 </template>
 
@@ -25,6 +26,9 @@ export default {
 
     // Append the link element to the <head>
     document.head.appendChild(link);
+
+    // Optionally, add error handling for the feed URL
+    // Here you might implement additional logic if the RSS feed fails to load
   },
   beforeUnmount() {
     // Clean up the link element when the component is destroyed

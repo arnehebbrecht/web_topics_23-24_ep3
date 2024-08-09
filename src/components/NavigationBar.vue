@@ -1,14 +1,14 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="#" @click.prevent="navigateTo('/')">Home</a>
+        <a href="/" @click.prevent="navigateTo('/')">Home</a>
       </li>
       <li class="nav-item">
-        <a href="#" @click.prevent="navigateTo('/Map')">Map</a>
+        <a href="/Map" @click.prevent="navigateTo('/Map')">Map</a>
       </li>
       <li class="nav-item">
-        <a href="#" @click.prevent="navigateTo('/Blog')">Blog</a>
+        <a href="/Blog" @click.prevent="navigateTo('/Blog')">Blog</a>
       </li>
     </ul>
   </nav>
@@ -32,6 +32,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .navbar {
   position: fixed; /* Fix the navbar to the top of the page */
@@ -58,10 +59,13 @@ export default {
 .nav-item a {
   color: white;
   text-decoration: none;
+  padding: 0.5rem; /* Add padding for better click/tap area */
 }
 
-.nav-item a:hover {
-  text-decoration: underline; /* Add underline on hover */
-  color: lightgray; /* Change color on hover */
+.nav-item a:hover,
+.nav-item a:focus {
+  text-decoration: underline; /* Add underline on hover and focus */
+  color: lightgray; /* Change color on hover and focus */
+  outline: 2px solid #ffcc00; /* Add a visible focus indicator */
 }
 </style>

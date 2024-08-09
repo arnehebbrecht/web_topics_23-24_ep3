@@ -2,16 +2,28 @@
   <div class="full-container">
     <!-- Loading Animation -->
     <LoadingAnimation v-if="loading" />
+
     <!-- Toggle Button for Sidebar -->
-    <button class="toggle-button" @click="toggleSidebar">
+    <button
+      class="toggle-button"
+      @click="toggleSidebar"
+      aria-expanded="true"
+      aria-controls="sidebar"
+    >
       {{ isSidebarVisible ? "All Wikipedia Links" : "Close" }}
     </button>
 
     <!-- Map container -->
-    <div ref="mapContainer" class="map-container"></div>
+    <div ref="mapContainer" class="map-container" role="region" aria-label="Map"></div>
 
     <!-- Sidebar -->
-    <div v-if="!isSidebarVisible" class="sidebar">
+    <aside
+      v-if="!isSidebarVisible"
+      class="sidebar"
+      id="sidebar"
+      role="complementary"
+      aria-hidden="true"
+    >
       <ul>
         <li v-for="city in cities" :key="city.name">
           <a
@@ -19,21 +31,25 @@
             target="_blank"
             rel="noopener noreferrer"
             @click="trackSidebarLinkClick(city.wikipedia)"
+            role="link"
           >
             {{ city.name }}
           </a>
         </li>
       </ul>
-    </div>
+    </aside>
 
     <!-- Information box -->
     <div
       v-if="selectedCity"
       class="info-box"
       :style="{ top: infoBoxPosition.top + 'px', left: infoBoxPosition.left + 'px' }"
+      role="dialog"
+      aria-labelledby="info-box-title"
+      aria-describedby="info-box-description"
     >
-      <h3>{{ selectedCity.name }}</h3>
-      <p>
+      <h3 id="info-box-title">{{ selectedCity.name }}</h3>
+      <p id="info-box-description">
         <a
           :href="selectedCity.wikipedia"
           target="_blank"
@@ -46,7 +62,7 @@
     </div>
 
     <!-- Error box -->
-    <div v-if="error" class="error-box">
+    <div v-if="error" class="error-box" role="alert" aria-live="assertive">
       <p>{{ error }}</p>
     </div>
   </div>
@@ -317,11 +333,27 @@ export default {
   z-index: 1000;
 }
 
-.sidebar ul li::marker {
-  color: #00ff00;
+.sidebar ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
 }
+
+.sidebar ul li {
+  margin: 0;
+}
+
 .sidebar ul li a {
   color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 16px; /* Add padding for better touch targets */
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+  background: #444;
+  color: #fff;
 }
 
 .info-box {
@@ -360,22 +392,12 @@ export default {
   z-index: 1001;
 }
 
-.toggle-button:hover {
+.toggle-button:hover,
+.toggle-button:focus {
   background: #0056b3;
 }
 
-.sidebar .close-button {
-  background: #ff0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  padding: 5px 10px;
-  z-index: 1001;
-}
-
-.sidebar .close-button:hover {
-  background: #cc0000;
+.toggle-button:focus {
+  outline: 2px solid #ffcc00; /* Add a visible focus indicator */
 }
 </style>

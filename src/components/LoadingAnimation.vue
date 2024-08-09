@@ -1,12 +1,19 @@
 <template>
-  <div class="loading-container">
+  <div
+    class="loading-container"
+    role="status"
+    aria-live="polite"
+    aria-labelledby="loading-message"
+  >
     <div id="loading-content">
-      <div ref="initialText" class="loading-text">
+      <div ref="initialText" class="loading-text" id="loading-message">
         <div class="letter-container">
-          <div ref="uLetter" class="letter">U</div>
-          <div ref="sLetter" class="letter">C</div>
+          <div ref="uLetter" class="letter" aria-hidden="true">U</div>
+          <div ref="sLetter" class="letter" aria-hidden="true">C</div>
         </div>
-        <div v-if="greeting" class="greeting-text">{{ greeting }}</div>
+        <div v-if="greeting" class="greeting-text" role="alert">
+          {{ greeting }}
+        </div>
       </div>
     </div>
   </div>
@@ -132,11 +139,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Prevent scrollbars during animation */
 }
 
 .loading-text {
   font-size: 12vh;
   color: white;
+  text-align: center; /* Center text horizontally */
 }
 
 .letter-container {

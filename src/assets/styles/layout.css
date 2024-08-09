@@ -1,0 +1,143 @@
+/* layout.css */
+/* Container style */
+.container {
+    margin-top: 100px; /* Adjust based on the height of your NavigationBar */
+    width: 100vw; /* Full viewport width */
+    min-height: 100vh; /* Minimum height of the viewport to ensure the container covers the screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    overflow-y: scroll;
+    height: 100vh;
+    padding-bottom: 100px; /* Add padding at the bottom to prevent content from being hidden under the footer */
+  }
+  
+  /* Wrapper for feed and sidebar */
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  .sidebar {
+    flex: 1; /* Takes up 1/4 of the space */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Ensure sidebar takes the full height of the content */
+    min-height: 100%;
+  }
+  
+  /* Main Content Section */
+  #main-content {
+    padding: 20px;
+  }
+  
+  /* Loading Container */
+  .loading-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of all other content */
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed; /* Fix the navbar to the top of the page */
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Example background color */
+    color: white;
+    padding: 1rem;
+    z-index: 9999; /* Ensure it's above other content */
+    left: 0;
+  }
+  
+  .nav-list {
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /* Use flexbox to align items horizontally */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin-right: 1rem; /* Space between each nav item */
+  }
+  
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem; /* Add padding for better click/tap area */
+  }
+  
+  .nav-item a:hover,
+  .nav-item a:focus {
+    text-decoration: underline; /* Add underline on hover and focus */
+    color: lightgray; /* Change color on hover and focus */
+    outline: 2px solid #ffcc00; /* Add a visible focus indicator */
+  }
+  
+  /* Map Container */
+  .map-container {
+    padding-top: 100px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+  
+  .sidebar {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: #333;
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  /* Info and Error Boxes */
+  .info-box,
+  .error-box {
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  .info-box {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .error-box {
+    bottom: 100px;
+    left: 20px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  

@@ -4,27 +4,42 @@
 
   <!-- Main Content -->
   <div class="container" v-if="!loading">
-    <h1 class="title">Wat have i learned</h1>
+    <h1 class="title">What I Have Learned ?</h1>
     <div class="content-wrapper">
-      <div class="RSS-Feed">
-        <ul class="feed-list">
+      <div class="RSS-Feed" aria-labelledby="feed-section">
+        <h2 id="feed-section" class="visually-hidden">RSS Feed</h2>
+        <ul class="feed-list" aria-live="polite">
           <li v-for="item in feedItems" :key="item.link" class="feed-item">
-            <h2 class="feed-description">{{ item.title }}</h2>
+            <h3 class="feed-title">{{ item.title }}</h3>
             <p class="feed-description">{{ item.description }}</p>
-            <a :href="item.link" class="feed-link">{{ item.link }}</a>
+            <a
+              :href="item.link"
+              class="feed-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ item.link }}</a
+            >
           </li>
         </ul>
       </div>
       <div class="sidebar">
         <div class="buttons">
-          <button @click="copyFeedUrl" class="button button-copy">
+          <button
+            @click="copyFeedUrl"
+            class="button button-copy"
+            aria-label="Copy RSS Feed URL"
+          >
             Copy RSS Feed URL
           </button>
-          <button @click="notifySubscription" class="button button-notify">
+          <button
+            @click="notifySubscription"
+            class="button button-notify"
+            aria-label="How to Subscribe"
+          >
             How to Subscribe
           </button>
         </div>
-        <div v-if="notificationVisible" class="notification">
+        <div v-if="notificationVisible" class="notification" role="alert">
           <p>To subscribe to this feed, paste the copied URL into your RSS reader.</p>
         </div>
       </div>
@@ -104,6 +119,18 @@ export default {
 </script>
 
 <style scoped>
+/* Utility class for visually hidden text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Container style */
 .container {
   margin-top: 100px; /* Adjust based on the height of your NavigationBar */
@@ -160,7 +187,7 @@ export default {
   text-decoration: none;
 }
 
-.feed-title:hover {
+.feed-link:hover {
   text-decoration: underline;
 }
 
