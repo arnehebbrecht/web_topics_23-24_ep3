@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-container">
+  <div class="loading-container" role="presentation">
     <div id="loading-content">
       <div ref="urbanText" class="urban-text">
         <span class="urban-letter">U</span>
@@ -22,7 +22,12 @@
         <span class="chronicles-letter">s</span>
       </div>
     </div>
-    <div ref="backgroundImage" class="background-image"></div>
+    <div
+      ref="backgroundImage"
+      class="background-image"
+      role="img"
+      aria-label="Decorative background image"
+    ></div>
   </div>
 </template>
 
@@ -40,52 +45,48 @@ export default {
 
     const tl = gsap.timeline();
 
-    // Animate urban text letters one by one
     tl.fromTo(
       urbanLetters,
       { opacity: 0, y: 20, color: "white" },
       { opacity: 1, y: 0, color: "white", stagger: 0.1, duration: 1 }
     );
 
-    // Animate chronicles text letters one by one
     tl.fromTo(
       chroniclesLetters,
       { opacity: 0, y: 20, color: "white" },
       { opacity: 1, y: 0, color: "white", stagger: 0.1, duration: 1 },
-      "-=0.5" // Start this animation halfway through the previous one
+      "-=0.5"
     );
 
-    // Fade in the background image
     tl.to(backgroundImage, {
       opacity: 1,
       duration: 3,
       ease: "power1.inOut",
     });
 
-    // Fade text to black after a delay
     tl.to(
       urbanLetters,
       {
-        textShadow: "1px 1px 20px black", // Black outline effect
+        textShadow: "1px 1px 20px black",
         color: "#00ff00",
         duration: 1,
-        delay: 1.5, // Delay before starting the color change
-        stagger: 0.1, // Maintain stagger effect for smooth transition
+        delay: 1.5,
+        stagger: 0.1,
       },
       "-=2.5"
-    ); // Adjust to overlap with the end of the background image fade
+    );
 
     tl.to(
       chroniclesLetters,
       {
-        textShadow: "1px 1px 20px black", // Black outline effect
+        textShadow: "1px 1px 20px black",
         color: "#ff00ff",
         duration: 1,
-        delay: 1.5, // Delay before starting the color change
-        stagger: 0.1, // Maintain stagger effect for smooth transition
+        delay: 1.5,
+        stagger: 0.1,
       },
       "-=2.5"
-    ); // Adjust to overlap with the end of the background image fade
+    );
   },
 };
 </script>
@@ -98,7 +99,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000; /* Set background color to black */
+  background-color: #000;
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
@@ -106,25 +107,25 @@ html {
 .loading-container {
   position: relative;
   width: 100vw;
-  height: 100vh; /* Ensure full viewport height */
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center content vertically */
-  overflow: hidden; /* Ensure no overflow */
+  align-items: center;
+  overflow: hidden;
 }
 
 #loading-content {
   display: flex;
-  flex-direction: column; /* Stack text vertically */
-  justify-content: center; /* Center vertically in the container */
-  align-items: center; /* Center horizontally in the container */
-  z-index: 1; /* Ensure content is above the image */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .urban-text,
 .chronicles-text {
-  font-size: 12vh; /* Use viewport width for responsive text size */
-  display: flex; /* Align items horizontally */
+  font-size: 12vh;
+  display: flex;
   gap: 0.2rem;
   margin: 0;
 }
@@ -133,7 +134,7 @@ html {
 .chronicles-letter {
   opacity: 0;
   transform: translateY(20px);
-  color: white; /* Initial text color */
+  color: white;
   transition: opacity 1s, transform 1s, color 1s, text-shadow 0.5s;
 }
 
@@ -148,5 +149,12 @@ html {
   background-position: center;
   opacity: 0;
   z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .urban-text,
+  .chronicles-text {
+    animation: none;
+  }
 }
 </style>

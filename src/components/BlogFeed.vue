@@ -4,7 +4,7 @@
 
   <!-- Main Content -->
   <div class="container" v-if="!loading">
-    <h1 class="title">Blog Feed</h1>
+    <h1 class="title">Wat have i learned</h1>
     <div class="content-wrapper">
       <div class="RSS-Feed">
         <ul class="feed-list">
