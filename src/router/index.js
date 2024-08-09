@@ -1,6 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
+import home from '@/views/Home.vue';
 import MapView from '@/views/Map.vue';
 import BlogPage from '@/views/BlogPage.vue'; 
 
@@ -8,17 +8,17 @@ import BlogPage from '@/views/BlogPage.vue';
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: home
   },
   {
-    path: '/Map',
-    name: 'Map', 
+    path: '/map',
+    name: 'map', 
     component: MapView
   },
   {
-    path: '/Blog',
-    name: 'Blog',
+    path: '/blog',
+    name: 'blog',
     component: BlogPage
   }
 ];

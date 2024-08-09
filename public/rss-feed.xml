@@ -39,15 +39,15 @@
 
   <!-- Blogpost 4 -->
   <item>
-    <title>Blogpost 4</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <title>OpenLayers</title>
+    <link>https://openlayers.org/</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
 
   <!-- Blogpost 5 -->
   <item>
-    <title>Blogpost 5</title>
+    <title>Google Tag Manager and Google Analaytics</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>

@@ -5,10 +5,10 @@
         <a href="/" @click.prevent="navigateTo('/')">Home</a>
       </li>
       <li class="nav-item">
-        <a href="/Map" @click.prevent="navigateTo('/Map')">Map</a>
+        <a href="/Map" @click.prevent="navigateTo('/map')">Map</a>
       </li>
       <li class="nav-item">
-        <a href="/Blog" @click.prevent="navigateTo('/Blog')">Blog</a>
+        <a href="/Blog" @click.prevent="navigateTo('/blog')">Blog</a>
       </li>
     </ul>
   </nav>
