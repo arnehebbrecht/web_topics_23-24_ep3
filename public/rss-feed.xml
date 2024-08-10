@@ -47,23 +47,35 @@
 
   <!-- Blogpost 5 -->
   <item>
-    <title>Google Tag Manager and Google Analaytics</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <title>Google Tag Manager</title>
+    <link>https://tagmanager.google.com/#/home</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 
   <!-- Blogpost 6 -->
   <item>
-    <title>Blogpost 6</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <title>Google Analytics</title>
+    <link>https://analytics.google.com/analytics/web/#/p452723721/reports/intelligenthome</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 
   <!-- Blogpost 7 -->
   <item>
-    <title>Blogpost 7</title>
+    <title>RSS-feed </title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>A brief summary of the blog post.</description>
+    <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
+  </item>
+  <item>
+    <title>functional CSS library</title>
+    <link>https://mijnwebsite.nl/blogpost-titel</link>
+    <description>A brief summary of the blog post.</description>
+    <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
+  </item>
+  <item>
+    <title>Web-accessibility</title>
     <link>https://mijnwebsite.nl/blogpost-titel</link>
     <description>A brief summary of the blog post.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>

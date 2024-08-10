@@ -5,14 +5,13 @@
 
     <!-- Toggle Button for Sidebar -->
     <button
-      class="toggle-button"
+      :class="['toggle-button', isSidebarVisible ? 'close-position' : 'default-position']"
       @click="toggleSidebar"
       aria-expanded="true"
       aria-controls="sidebar"
     >
       {{ isSidebarVisible ? "All Wikipedia Links" : "Close" }}
     </button>
-
     <!-- Map container -->
     <div ref="mapContainer" class="map-container" role="region" aria-label="Map"></div>
 
@@ -307,97 +306,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.full-container {
-  position: relative;
-}
-
-.map-container {
-  padding-top: 100px;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}
-
-.sidebar {
-  position: absolute;
-  top: 100px;
-  right: 0;
-  width: 200px;
-  height: 100%;
-  background: #333;
-  border-left: 1px solid #ddd;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  z-index: 1000;
-}
-
-.sidebar ul {
-  list-style: none; /* Remove default list styling */
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li {
-  margin: 0;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 8px 16px; /* Add padding for better touch targets */
-}
-
-.sidebar ul li a:hover,
-.sidebar ul li a:focus {
-  background: #444;
-  color: #fff;
-}
-
-.info-box {
-  position: absolute;
-  background: white;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-.error-box {
-  position: absolute;
-  bottom: 100px;
-  left: 20px;
-  background: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-.toggle-button {
-  position: absolute;
-  top: 100px;
-  right: 0;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.toggle-button:hover,
-.toggle-button:focus {
-  background: #0056b3;
-}
-
-.toggle-button:focus {
-  outline: 2px solid #ffcc00; /* Add a visible focus indicator */
-}
-</style>

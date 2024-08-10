@@ -1,0 +1,464 @@
+/* CSS Library */
+
+/* General Styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Skip Link Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.skip-link:focus {
+  top: 0;
+  background: #fff;
+  color: #000;
+  border-color: #000;
+  outline: none;
+}
+
+/* Loading Container */
+.loading-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Main Content Area */
+#loading-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Text Styles */
+.urban-text,
+.chronicles-text {
+  font-size: 12vh;
+  display: flex;
+  gap: 0.2rem;
+  margin: 0;
+}
+
+/* Letter Styles */
+.urban-letter,
+.chronicles-letter {
+  opacity: 0;
+  transform: translateY(20px);
+  color: #ffffff;
+  transition: opacity 1s, transform 1s, color 1s, text-shadow 0.5s;
+}
+
+/* Background Image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("@/assets/gent.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .urban-text,
+  .chronicles-text {
+    transition: opacity 0s, transform 0s, color 0s, text-shadow 0s;
+  }
+}
+
+/* Focus Styles for Accessibility */
+:focus {
+  outline: 3px solid #ffcc00;
+}
+
+/* Main Content Section */
+#main-content {
+  padding: 20px;
+}
+.loading-container {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* Semi-transparent background */
+    z-index: 1; /* Lower z-index to be below the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrollbars during animation */
+  }
+  
+  .loading-text {
+    font-size: 12vh;
+    color: white;
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .letter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .letter {
+    margin: 0;
+    transform-style: preserve-3d; /* Ensure children are transformed in 3D space */
+  }
+  
+  .greeting-text {
+    font-size: 5vh; /* Adjust size as needed */
+    color: white; /* Match or contrast with existing text color */
+    margin-top: 2rem; /* Space between letters and greeting */
+  }
+
+/* Utility class for visually hidden text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Container style */
+.container {
+  margin-top: 100px; /* Adjust based on the height of your NavigationBar */
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Minimum height of the viewport to ensure the container covers the screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  overflow-y: scroll;
+  height: 100vh;
+  padding-bottom: 100px; /* Add padding at the bottom to prevent content from being hidden under the footer */
+}
+
+/* Title style */
+.title {
+  font-size: 2.5em; /* Larger title for prominence */
+  color: #1a73e8; /* Highlight color */
+  margin-bottom: 20px;
+}
+
+/* Wrapper for feed and sidebar */
+.content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* RSS Feed style */
+.RSS-Feed {
+  flex: 3; /* Takes up 3/4 of the space */
+}
+
+/* Feed list style */
+.feed-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.feed-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #444; /* Darker border for visibility on black background */
+  border-radius: 8px;
+  background-color: #1e1e1e; /* Slightly lighter black background for items */
+}
+
+.feed-title {
+  font-size: 1.4em;
+  color: #1a73e8; /* Highlight color */
+  text-decoration: none;
+}
+
+.feed-link:hover {
+  text-decoration: underline;
+}
+
+.feed-description {
+  font-size: 1em;
+  color: #bbb; /* Light grey text color for descriptions */
+}
+
+.feed-link {
+  color: #2196f3;
+}
+
+/* Sidebar style */
+.sidebarBlog {
+  flex: 1; /* Takes up 1/4 of the space */
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Ensure sidebar takes the full height of the content */
+  min-height: 100%;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styles */
+.button {
+  margin-top: 16px;
+  margin-left: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%; /* Make buttons stretch to fill the container */
+}
+
+.button-copy {
+  background-color: #4caf50; /* Green background for the copy button */
+  color: white;
+}
+
+.button-copy:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.button-notify {
+  background-color: #2196f3; /* Blue background for the notify button */
+  color: white;
+}
+
+.button-notify:hover {
+  background-color: #1976d2; /* Darker blue on hover */
+}
+
+/* Notification style */
+.notification {
+  margin-left: 15px;
+  overflow-wrap: break-word; /* Wrap long URLs */
+  background-color: #333; /* Dark background for notification */
+  border: 1px solid #444; /* Slightly lighter border */
+  border-radius: 8px;
+  max-width: 200px; /* Set a max-width for better readability */
+  text-align: center;
+  color: #fff; /* White text for contrast */
+}
+
+/* Loading animation styles */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of all other content */
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 8px solid #1a73e8;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  position: fixed; /* Fix the navbar to the top of the page */
+  top: 0;
+  width: 100%;
+  background-color: #333; /* Example background color */
+  color: white;
+  padding: 1rem;
+  z-index: 9999; /* Ensure it's above other content */
+  left: 0;
+}
+
+.nav-list {
+  list-style-type: none; /* Remove default list styling */
+  display: flex; /* Use flexbox to align items horizontally */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-right: 1rem; /* Space between each nav item */
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem; /* Add padding for better click/tap area */
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+  text-decoration: underline; /* Add underline on hover and focus */
+  color: lightgray; /* Change color on hover and focus */
+  outline: 2px solid #ffcc00; /* Add a visible focus indicator */
+}
+
+
+.full-container {
+  position: relative;
+}
+
+.map-container {
+  padding-top: 100px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.sidebar {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: #333;
+  border-left: 1px solid #ddd;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 16px; /* Add padding for better touch targets */
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+  background: #444;
+  color: #fff;
+}
+
+.info-box {
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.info-box a {
+  color: #007bff;
+}
+
+.error-box {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 104px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.toggle-button.default-position {
+  right: 205px;
+}
+
+/* Position when the button text is "Close" */
+.toggle-button.close-position {
+  right: 5px; /* Adjust based on sidebar width and desired spacing */
+}
+
+.toggle-button:hover,
+.toggle-button:focus {
+  background: #0056b3;
+}
+
+.toggle-button:focus {
+  outline: 2px solid #ffcc00; /* Add a visible focus indicator */
+}
+
+
+

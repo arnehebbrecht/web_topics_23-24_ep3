@@ -5,7 +5,7 @@ import router from './router';
 // Import the plugins
 import VueGtm from '@gtm-support/vue-gtm';
 import VueGtag from 'vue-gtag';
-
+import './assets/styles.css';
 // Create the Vue application
 const app = createApp(App);
 
