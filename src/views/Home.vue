@@ -3,6 +3,7 @@
     <LoadingAnimation v-if="isLoading" />
     <NavigationBar />
     <MainPage v-if="!isLoading" />
+    <FooterComponent />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import NavigationBar from "@/components/NavigationBar.vue";
 import LoadingAnimation from "@/components/LoadingAnimation.vue";
 import MainPage from "@/components/MainPage.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     NavigationBar,
     LoadingAnimation,
     MainPage,
+    FooterComponent,
   },
   data() {
     return {

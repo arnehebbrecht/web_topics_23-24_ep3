@@ -3,6 +3,7 @@
     <NavigationBar />
     <RssFeedLink />
     <BlogFeed />
+    <FooterComponent />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import NavigationBar from "@/components/NavigationBar.vue";
 import RssFeedLink from "@/components/RssFeedLink.vue";
 import BlogFeed from "@/components/BlogFeed.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     RssFeedLink,
     NavigationBar,
     BlogFeed,
+    FooterComponent,
   },
 };
 </script>
