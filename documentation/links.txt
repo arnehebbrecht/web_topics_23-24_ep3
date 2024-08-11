@@ -7,3 +7,5 @@ https://urbanchronicles.arnehebbrecht.ikdoeict.be/
 https://plesk.ikdoeict.be
 
 install RSS Feed Reader extension into chrome
+
+https://www.vuemastery.com/migration-guide-cheat-sheet/
