@@ -1,1 +1,2 @@
 # web_topics_23-24_ep3
+50% is goed genoeg is men aller laatste vak en ik wil gewoon afstuderen. zal toch nooit meer web doen heb hier niet veel intersse in. Ben ook niet goed in het grafisch designen van iets maar heb al bij alles mijn best wel gedaan dnek ik

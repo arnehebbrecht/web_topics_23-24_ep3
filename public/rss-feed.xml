@@ -41,7 +41,7 @@
   <item>
     <title>OpenLayers</title>
     <link>https://openlayers.org/</link>
-    <description>A brief summary of the blog post.</description>
+    <description>Using openlayers was still pretty obvious though. since I had used this before and that the documentation is also very good.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
 
@@ -49,7 +49,7 @@
   <item>
     <title>Google Tag Manager</title>
     <link>https://tagmanager.google.com/#/home</link>
-    <description>A brief summary of the blog post.</description>
+    <description>figuring out how this works took a lot of time anyway since this goes through a lot of revisions and finding up to date information was not always easy. youtube was a great help here</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 
@@ -57,27 +57,28 @@
   <item>
     <title>Google Analytics</title>
     <link>https://analytics.google.com/analytics/web/#/p452723721/reports/intelligenthome</link>
-    <description>A brief summary of the blog post.</description>
+    <description>It tracks things like opening the sidebar, scrolling , zooming in and out on the map, clicking a country and link.</description>
     <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
   </item>
 
   <!-- Blogpost 7 -->
   <item>
     <title>RSS-feed </title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <link>NA</link>
+    <description>The rss feed link is available in the head of the web page which should make it discoverable. You can also copy the link manually and then copy it into an rss feed reader yourself.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
+
   <item>
     <title>functional CSS library</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <link>NA</link>
+    <description>Did not manage to implement css is not my strength point</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
   <item>
     <title>Web-accessibility</title>
-    <link>https://mijnwebsite.nl/blogpost-titel</link>
-    <description>A brief summary of the blog post.</description>
+    <link>NA</link>
+    <description>I did my best to fill this out. But honestly have no idea if it is correct do not really possess the knowledge to fill all this out and was quite overwhelming.</description>
     <pubDate>Fri, 31 Dec 1999 23:59:59 EST</pubDate>
   </item>
 </channel>
